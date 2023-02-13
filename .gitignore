@@ -13,6 +13,7 @@ assets/
 public/
 example/public/
 lib/
+dist/
 
 # Dependency directories
 node_modules
