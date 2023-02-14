@@ -18,8 +18,8 @@ export const setHook = (hook) => {
   storeHooks.set(masterFn, hooks);
 };
 
-const runEffects = () => {
-  effects.forEach(
+const runEffects = (currentEffects = effects) => {
+  currentEffects.forEach(
     (effect) => effect && effect(),
   );
 };
@@ -29,6 +29,10 @@ export const addEffect = (effectFn) => {
 };
 
 export const using = (hookFn) => (...args) => {
+  if (!masterFn) {
+    throw 'TODO error';
+  }
+
   const result = hookFn(...args);
 
   index += 1;
@@ -36,6 +40,10 @@ export const using = (hookFn) => (...args) => {
 };
 
 export const usingWithMemorize = (hookFn) => (fn, dependencies) => {
+  if (!masterFn) {
+    throw 'TODO error';
+  }
+
   const {
     memorizedState: prevMemorizedState,
     dependencies: prevDependencies,
@@ -61,14 +69,15 @@ export const reacting = (fn) => {
     effects = [];
 
     let result = fn.apply(this, args);
+    const currentEffects = effects;
 
     if (isPromise(result)) {
       result = result.then((promised) => {
-        runEffects();
+        runEffects(currentEffects);
         return promised;
       });
     } else {
-      runEffects();
+      runEffects(currentEffects);
     }
 
     masterFn = prevMasterFn;
