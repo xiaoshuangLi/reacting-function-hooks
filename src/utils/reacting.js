@@ -30,7 +30,7 @@ export const addEffect = (effectFn) => {
 
 export const using = (hookFn) => (...args) => {
   if (!masterFn) {
-    throw 'TODO error';
+    throw new Error('You need wrap the function by reacting(() => { ... }).');
   }
 
   const result = hookFn(...args);
@@ -41,7 +41,7 @@ export const using = (hookFn) => (...args) => {
 
 export const usingWithMemorize = (hookFn) => (fn, dependencies) => {
   if (!masterFn) {
-    throw 'TODO error';
+    throw new Error('You need wrap the function by reacting(() => { ... }).');
   }
 
   const {
