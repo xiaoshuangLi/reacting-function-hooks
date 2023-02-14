@@ -8,7 +8,7 @@ import reacting, {
   usingEffect,
 } from 'reacting-function-hooks';
 
-const test = reacting(() => {
+const running = reacting(() => {
   console.log('\n\n<<<<<<<<<<<<<<<<<<< Function Begin');
 
   const ref = usingRef(0);
@@ -33,8 +33,8 @@ const test = reacting(() => {
   console.log('>>>>>>>>>>>>>>>>>>> Function End');
 });
 
-test();
-test();
+running();
+running();
 
 const App = (props = {}) => {
   const { className, children, ...others } = props;
