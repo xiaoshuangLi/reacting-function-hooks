@@ -4,7 +4,7 @@ import {
   usingWithMemorize,
 } from '../utils/reacting';
 
-const usingEffect = usingWithMemorize((fn) => {
+const usingEffect = usingWithMemorize('usingEffect', (fn) => {
   const hook = getHook() || {};
   const { memorizedState = {} } = hook;
 

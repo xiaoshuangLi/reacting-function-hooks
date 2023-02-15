@@ -12,7 +12,10 @@ const getStateHook = (initialState) => {
       ? initialState()
       : initialState;
 
-    setHook({ memorizedState });
+    setHook({
+      type: 'usingState',
+      memorizedState,
+    });
   }
 
   return getHook();

@@ -10,17 +10,20 @@ const getRefHook = (initialValue) => {
   if (hook === undefined) {
     const memorizedState = { current: initialValue };
 
-    setHook({ memorizedState });
+    setHook({
+      type: 'usingRef',
+      memorizedState,
+    });
   }
 
   return getHook();
 };
 
-const usingState = using((initialValue) => {
+const usingRef = using((initialValue) => {
   const hook = getRefHook(initialValue) || {};
   const { memorizedState } = hook;
 
   return memorizedState;
 });
 
-export default usingState;
+export default usingRef;

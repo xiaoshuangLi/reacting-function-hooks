@@ -1,5 +1,8 @@
 import { usingWithMemorize } from '../utils/reacting';
 
-const usingMemo = usingWithMemorize((fn) => fn());
+const usingMemo = usingWithMemorize(
+  'usingMemo',
+  (fn) => fn(),
+);
 
 export default usingMemo;
