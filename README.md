@@ -9,7 +9,7 @@ At First, i just want ```usingMemo``` to optimize performace. But why say no to 
 ## Installation
 
 ```sh
-npm install --save react-baby-form
+npm install --save reacting-function-hooks
 ```
 
 ### Usage
