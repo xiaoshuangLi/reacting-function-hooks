@@ -10,6 +10,13 @@ module.exports = {
     publicPath: '/',
     filename: 'index.js',
     path: path.resolve(basePath, 'lib'),
+    library: {
+      root: 'ReactingFunctionHooks',
+      amd: 'ReactingFunctionHooks',
+      commonjs: 'reacting-function-hooks',
+    },
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
   resolve: {
     modules: [
