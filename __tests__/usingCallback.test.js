@@ -3,12 +3,12 @@ import reacting, { usingCallback } from '../src';
 describe('usingCallback:', () => {
   it('memorized when dependencies unchanged', () => {
     const running = reacting((...dependencies) => {
-      const object = usingCallback(
+      const callback = usingCallback(
         (a, b) => a + b,
         dependencies,
       );
 
-      return object;
+      return callback;
     });
 
     const a = running(1, 2, 3);
@@ -20,12 +20,12 @@ describe('usingCallback:', () => {
 
   it('memorized with enmpty dependencies', () => {
     const running = reacting(() => {
-      const object = usingCallback(
+      const callback = usingCallback(
         (a, b) => a + b,
         [],
       );
 
-      return object;
+      return callback;
     });
 
     const a = running();
@@ -37,12 +37,12 @@ describe('usingCallback:', () => {
 
   it('changed when dependencies changed', () => {
     const running = reacting((...dependencies) => {
-      const object = usingCallback(
+      const callback = usingCallback(
         (a, b) => a + b,
         dependencies,
       );
 
-      return object;
+      return callback;
     });
 
     const a = running(1, 2, 3);
@@ -54,11 +54,11 @@ describe('usingCallback:', () => {
 
   it('changed everyting without dependencies', () => {
     const running = reacting(() => {
-      const object = usingCallback(
+      const callback = usingCallback(
         (a, b) => a + b,
       );
 
-      return object;
+      return callback;
     });
 
     const a = running();
