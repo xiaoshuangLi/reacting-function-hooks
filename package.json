@@ -1,4 +1,21 @@
 {
+  "name": "reacting-function-hooks",
+  "version": "1.0.0",
+  "description": "Create React-like hooks for regular function.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaoshuangLi/reacting-function-hooks"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "function"
+  ],
   "scripts": {
     "test": "jest --coverage",
     "start": "webpack-dev-server --config examples/webpack.config.js",
