@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "webpack-dev-server --config examples/webpack.config.js",
     "build": "webpack",
     "prepublishOnly": "npm run test && npm run build"
