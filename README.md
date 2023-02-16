@@ -80,7 +80,7 @@ const running = reacting(() => {
 
 Maybe it can replace global variables for function.
 
-```
+```js
 let count = 0;
 
 const runCounter = () => {
